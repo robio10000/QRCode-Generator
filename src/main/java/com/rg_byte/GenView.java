@@ -17,7 +17,7 @@ public class GenView extends JFrame implements PropertyChangeListener {
     private final QRCodePanel qrPnl;
 
     /**
-     * Init QRCode Generator view
+     * Init the QRCode Generator view.
      */
     public GenView(){
         setTitle("QR-Code Generator");
@@ -34,18 +34,33 @@ public class GenView extends JFrame implements PropertyChangeListener {
 
     }
 
+    /**
+     * Open the view.
+     */
     public void showView(){
         SwingUtilities.invokeLater(()->setVisible(true));
     }
 
+    /**
+     * Get the input data of the view.
+     * @return user input.
+     */
     public String getURL(){
         return dataTxt.getText();
     }
 
+    /**
+     * Add a listener to the generate button.
+     * @param listener The listener.
+     */
     public void addGenerateAction(ActionListener listener){
         genBtn.addActionListener(listener);
     }
 
+    /**
+     * Add a listener to the save button.
+     * @param listener The listener.
+     */
     public void addSaveAction(ActionListener listener){
         saveBtn.addActionListener(listener);
     }

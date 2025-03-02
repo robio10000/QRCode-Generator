@@ -10,6 +10,10 @@ public class QRCodePanel extends JPanel {
     private transient BufferedImage image;
     private transient BufferedImage scaledImage;
 
+    /**
+     * Init the QRCodePanel.<br>
+     * Init resize listener.
+     */
     public QRCodePanel(){
 
         addComponentListener(new ComponentAdapter() {
@@ -23,6 +27,9 @@ public class QRCodePanel extends JPanel {
         image = null;
     }
 
+    /**
+     * Resize the image to the size of the panel itself.
+     */
     private void resizeImage() {
         if (image != null) {
             int width = getWidth();
@@ -45,6 +52,10 @@ public class QRCodePanel extends JPanel {
         g2d.drawImage(this.scaledImage, null, 0,0);
     }
 
+    /**
+     * Set the image of the panel.
+     * @param image The image.
+     */
     public void setImage(BufferedImage image) {
         this.image = image;
         resizeImage();

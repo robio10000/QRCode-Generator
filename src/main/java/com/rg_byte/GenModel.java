@@ -21,6 +21,10 @@ public class GenModel {
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
 
 
+    /**
+     * Set QRCode image and trigger the observer.
+     * @param qrCodeImage Image to set.
+     */
     public void setQRCode(BufferedImage qrCodeImage){
         BufferedImage old = this.qrCodeImage;
         this.qrCodeImage = qrCodeImage;
@@ -28,21 +32,42 @@ public class GenModel {
 
     }
 
+    /**
+     * Set the Size for the next QRCode generation.
+     * @param size Size to set.
+     */
     void setSize(int size){
         this.size = size;
     }
+
+    /**
+     * Get the Size for generate a QRCode.
+     * @return The size.
+     */
     public int getSize() {
         return this.size;
     }
 
+    /**
+     * Set the data that will use for the next QRCode generation.
+     * @param url Data to set.
+     */
     public void setURL(String url) {
         this.url = url;
     }
 
+    /**
+     * Get the data for QRCode generation.
+     * @return The data.
+     */
     public String getURL() {
         return this.url;
     }
 
+    /**
+     * Action for the button click.
+     * @throws WriterException Error while encoding BitMatrix.
+     */
     public void generateAction() throws WriterException {
         setSize(1500);
         BitMatrix bitMatrix = generateQRCodeMatrix();
@@ -50,6 +75,14 @@ public class GenModel {
         setQRCode(image);
     }
 
+    /**
+     * Open JFileChooser to choose a dir.<br>
+     * Open Size request. Default Value is 1500.<br>
+     * Save the QRCode as png in the dir as qrcode_LONGVALUE.png.<br>
+     * @return the QRCode File.
+     * @throws IOException Error while write the file.
+     * @throws WriterException Error while encoding BitMatrix.
+     */
     public File saveAction() throws IOException, WriterException {
         JFileChooser chooser = new JFileChooser();
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -71,6 +104,15 @@ public class GenModel {
 
     }
 
+    /**
+     * Generate a QRCode with data saved in the model and save the QRCode to a file.
+     * @param path path to save the QRCode.
+     * @param size size of QRCode File.
+     * @return QRCode file.
+     * @throws IllegalArgumentException If data is empty.
+     * @throws WriterException Error while generate BitMatrix.
+     * @throws IOException Error while writing the file.
+     */
     protected File generateQRCodeToFile(String path, int size) throws IllegalArgumentException, WriterException, IOException {
         // Make file of the path
         File file = new File(path);
@@ -85,6 +127,11 @@ public class GenModel {
         return file;
     }
 
+    /**
+     * Generate QRCode Matrix object.
+     * @return BitMatrix object.
+     * @throws WriterException error while encoding.
+     */
     protected BitMatrix generateQRCodeMatrix() throws WriterException {
         // Get temp file
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
@@ -93,11 +140,19 @@ public class GenModel {
         return bitMatrix;
     }
 
+    /**
+     * Add a listener to the observer.
+     * @param pcl The listener.
+     */
     public void addPropertyChangeListener(PropertyChangeListener pcl) {
         support.addPropertyChangeListener(pcl);
     }
 
-
+    /**
+     * Convert a BitMatrix to a BufferedImage
+     * @param bitMatrix The BitMatrix source.
+     * @return The QRCode/BitMatrix as BufferedImage.
+     */
     public static BufferedImage convertMatrixToImage(BitMatrix bitMatrix) {
         return MatrixToImageWriter.toBufferedImage(bitMatrix);
     }
