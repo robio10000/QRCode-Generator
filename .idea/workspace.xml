@@ -9,13 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5ecf8b-bcc2-4c00-9844-ffd319a194cb" name="Changes" comment="build v1.0">
+    <list default="true" id="1d5ecf8b-bcc2-4c00-9844-ffd319a194cb" name="Changes" comment="add comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rg_byte/GenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rg_byte/GenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rg_byte/GenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rg_byte/GenModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rg_byte/GenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rg_byte/GenView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rg_byte/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rg_byte/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rg_byte/QRCodePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rg_byte/QRCodePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,13 +116,31 @@
       <option name="project" value="LOCAL" />
       <updated>1740849741809</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="workspace configs">
+      <option name="closed" value="true" />
+      <created>1740927414444</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740927414444</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add comments">
+      <option name="closed" value="true" />
+      <created>1740927427260</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740927427260</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init idea" />
     <MESSAGE value="init v1.0" />
     <MESSAGE value="build v1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="build v1.0" />
+    <MESSAGE value="workspace configs" />
+    <MESSAGE value="add comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="add comments" />
   </component>
 </project>
