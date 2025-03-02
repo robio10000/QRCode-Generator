@@ -30,12 +30,12 @@ public class GenController {
      * Action for click on generate.
      */
     private void generateAction(){
-        String url = this.view.getURL();
-        if(url.isEmpty()){
+        String data = this.view.getData();
+        if(data.isEmpty()){
             JOptionPane.showMessageDialog(this.view, "Please type in a value!","Input Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }else {
-            this.model.setURL(url);
+            this.model.setData(data);
         }
 
         try {
@@ -51,12 +51,12 @@ public class GenController {
      * Action for click on save.
      */
     private void saveAction(){
-        String url = this.view.getURL();
-        if(url.isEmpty()){
+        String data = this.view.getData();
+        if(data.isEmpty()){
             JOptionPane.showMessageDialog(this.view, "Please type in a value!","Input Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }else {
-            this.model.setURL(url);
+            this.model.setData(data);
         }
 
         File file;

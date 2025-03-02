@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class GenModel {
-    private String url;
+    private String data;
     private BufferedImage qrCodeImage;
     private int size;
 
@@ -52,16 +52,16 @@ public class GenModel {
      * Set the data that will use for the next QRCode generation.
      * @param url Data to set.
      */
-    public void setURL(String url) {
-        this.url = url;
+    public void setData(String url) {
+        this.data = url;
     }
 
     /**
      * Get the data for QRCode generation.
      * @return The data.
      */
-    public String getURL() {
-        return this.url;
+    public String getData() {
+        return this.data;
     }
 
     /**
@@ -100,25 +100,23 @@ public class GenModel {
             cSize = 1500;
         }
 
-        return generateQRCodeToFile(file.getAbsolutePath() + "/qrcode_" + System.currentTimeMillis() + ".png", cSize);
+        this.setSize(cSize);
+        return generateQRCodeToFile(file.getAbsolutePath() + "/qrcode_" + System.currentTimeMillis() + ".png");
 
     }
 
     /**
      * Generate a QRCode with data saved in the model and save the QRCode to a file.
      * @param path path to save the QRCode.
-     * @param size size of QRCode File.
      * @return QRCode file.
      * @throws IllegalArgumentException If data is empty.
      * @throws WriterException Error while generate BitMatrix.
      * @throws IOException Error while writing the file.
      */
-    protected File generateQRCodeToFile(String path, int size) throws IllegalArgumentException, WriterException, IOException {
+    protected File generateQRCodeToFile(String path) throws IllegalArgumentException, WriterException, IOException {
         // Make file of the path
         File file = new File(path);
 
-        // Set size
-        this.setSize(size);
         // Generate QRCode to the file
         BitMatrix bitMatrix = generateQRCodeMatrix();
 
@@ -136,7 +134,7 @@ public class GenModel {
         // Get temp file
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix;
-        bitMatrix = qrCodeWriter.encode(this.getURL(), BarcodeFormat.QR_CODE, this.getSize(), this.getSize());
+        bitMatrix = qrCodeWriter.encode(this.getData(), BarcodeFormat.QR_CODE, this.getSize(), this.getSize());
         return bitMatrix;
     }
 

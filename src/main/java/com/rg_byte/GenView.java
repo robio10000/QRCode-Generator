@@ -45,7 +45,7 @@ public class GenView extends JFrame implements PropertyChangeListener {
      * Get the input data of the view.
      * @return user input.
      */
-    public String getURL(){
+    public String getData(){
         return dataTxt.getText();
     }
 
