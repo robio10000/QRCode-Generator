@@ -15,8 +15,8 @@ public class GenController {
     /**
      * Init the GenController.<br>
      * Init view listeners.
-     * @param model
-     * @param view
+     * @param model Model for the controller.
+     * @param view View for the controller.
      */
     GenController(GenModel model, GenView view){
         this.model = model;
